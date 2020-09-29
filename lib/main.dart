@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'package:red_weather/Degrees.dart';
 
-import 'Temperature.dart';
-
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => Temperature(),
-    child: MyApp(),
-  ));
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -49,18 +45,7 @@ class MyApp extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) => Container(
                     padding: EdgeInsets.all(8), child: _forecastDay(index)),
               ),
-            ),
-            Center(
-              child: RaisedButton(
-                onPressed: () {
-                  var temperatureIncrementer =
-                      Provider.of<Temperature>(context, listen: false);
-                  temperatureIncrementer.incrementCounter();
-                },
-                child: Icon(Icons.navigation),
-              ),
-            ),
-            // _weatherForecast(),
+            ), // _weatherForecast(),
           ],
         ),
       ),

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'Temperature.dart';
 
 class Degrees extends StatelessWidget {
   @override
@@ -13,9 +10,7 @@ class Degrees extends StatelessWidget {
     //   ),
     // );
     return Text(
-      Provider.of<Temperature>(context, listen: true)
-          .getTemperature()
-          .toString(),
+      "25",
       style: (TextStyle(fontSize: 45, fontWeight: FontWeight.w200)),
     );
   }
